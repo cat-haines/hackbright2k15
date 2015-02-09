@@ -204,7 +204,7 @@ const HASHTAG = ""
 // Setup Twitter:
 twitter <- Twitter(CONSUMER_KEY, CONSUMER_SECRET, AUTH_TOKEN, TOKEN_SECRET);
 
-twitter.stream(HASHTAG, function(tweetData) {
+twitter.stream(HASHTAG, function(tweet) {
     server.log("Got a tweet..")
     server.log(tweet.text + " - @" + tweet.user.screen_name);
     device.send("tweet", { tweet = tweet.text, user = tweet.user.screen_name });
